@@ -1,0 +1,13 @@
+{
+  "name": "bot-candle-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix candle-whisperer-08 run dev",
+    "build": "npm --prefix candle-whisperer-08 run build",
+    "build:dev": "npm --prefix candle-whisperer-08 run build:dev",
+    "lint": "npm --prefix candle-whisperer-08 run lint",
+    "preview": "npm --prefix candle-whisperer-08 run preview",
+    "test": "npm --prefix candle-whisperer-08 run test",
+    "test:watch": "npm --prefix candle-whisperer-08 run test:watch"
+  }
+}
