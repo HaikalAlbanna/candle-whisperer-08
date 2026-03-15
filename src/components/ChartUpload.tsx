@@ -65,7 +65,7 @@ const ChartUpload: React.FC<ChartUploadProps> = ({ onImageUpload, previewUrl, is
       >
         <img
           src={previewUrl}
-          alt="Trading chart"
+          alt="Chart trading"
           className="w-full h-auto max-h-[400px] object-contain"
         />
         {isAnalyzing && (
@@ -76,7 +76,7 @@ const ChartUpload: React.FC<ChartUploadProps> = ({ onImageUpload, previewUrl, is
         {!isAnalyzing && (
           <label className="absolute bottom-3 right-3 flex items-center gap-2 px-3 py-1.5 rounded-md bg-secondary/80 backdrop-blur text-xs font-mono text-muted-foreground cursor-pointer hover:text-foreground transition-colors">
             <Upload className="w-3 h-3" />
-            Replace
+            Ganti
             <input
               type="file"
               accept="image/*"

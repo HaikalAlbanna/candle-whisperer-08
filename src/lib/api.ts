@@ -7,7 +7,7 @@ export async function analyzeChart(imageBase64: string): Promise<ChartAnalysis> 
   });
 
   if (error) {
-    throw new Error(error.message || "Analysis failed");
+    throw new Error(error.message || "Analisis gagal");
   }
 
   if (data?.error) {

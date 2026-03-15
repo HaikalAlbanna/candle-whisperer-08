@@ -1,6 +1,14 @@
 import React from "react";
 import type { ChartAnalysis } from "@/types/trading";
 import { TrendingUp, Activity, BarChart3, Zap } from "lucide-react";
+import {
+  formatBollingerPosition,
+  formatMacdHistogram,
+  formatMacdSignal,
+  formatMomentumStatus,
+  formatTrendDirection,
+  formatTrendStrength,
+} from "@/lib/analysis-i18n";
 
 interface AnalysisGridProps {
   analysis: ChartAnalysis;
@@ -35,32 +43,32 @@ const AnalysisGrid: React.FC<AnalysisGridProps> = ({ analysis }) => {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
       <AnalysisCard
         icon={<TrendingUp className="w-4 h-4 text-primary" />}
-        title="Trend"
-        value={analysis.trend.direction}
-        subtitle={`Strength: ${analysis.trend.strength}`}
+        title="Tren"
+        value={formatTrendDirection(analysis.trend.direction)}
+        subtitle={`Kekuatan: ${formatTrendStrength(analysis.trend.strength)}`}
         description={analysis.trend.description}
         delay={0}
       />
       <AnalysisCard
         icon={<Activity className="w-4 h-4 text-signal-neutral" />}
         title="Bollinger Bands"
-        value={analysis.bollingerBands.position}
-        subtitle={analysis.bollingerBands.squeeze ? "Squeeze Detected" : "No Squeeze"}
+        value={formatBollingerPosition(analysis.bollingerBands.position)}
+        subtitle={analysis.bollingerBands.squeeze ? "Squeeze terdeteksi" : "Tidak ada squeeze"}
         description={analysis.bollingerBands.description}
         delay={100}
       />
       <AnalysisCard
         icon={<BarChart3 className="w-4 h-4 text-primary" />}
         title="MACD"
-        value={analysis.macd.signal}
-        subtitle={`Histogram: ${analysis.macd.histogram}`}
+        value={formatMacdSignal(analysis.macd.signal)}
+        subtitle={`Histogram: ${formatMacdHistogram(analysis.macd.histogram)}`}
         description={analysis.macd.description}
         delay={200}
       />
       <AnalysisCard
         icon={<Zap className="w-4 h-4 text-signal-neutral" />}
         title="Momentum"
-        value={analysis.momentum.status}
+        value={formatMomentumStatus(analysis.momentum.status)}
         description={analysis.momentum.description}
         delay={300}
       />

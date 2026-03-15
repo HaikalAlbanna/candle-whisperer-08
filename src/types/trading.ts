@@ -1,5 +1,5 @@
 export interface ChartAnalysis {
-  signal: "CALL" | "PUT";
+  signal: "CALL" | "PUT" | "NO_TRADE";
   confidence: number;
   trend: {
     direction: "Bullish" | "Bearish" | "Sideways";
@@ -26,11 +26,11 @@ export interface ChartAnalysis {
 export type AnalysisStatus = "idle" | "uploading" | "scanning" | "complete" | "error";
 
 export const SCAN_MESSAGES = [
-  "Initializing Vision Engine...",
-  "Detecting Candlestick Patterns...",
-  "Analyzing Trend Direction...",
-  "Reading Bollinger Bands...",
-  "Processing MACD Signals...",
-  "Evaluating Momentum...",
-  "Generating Prediction...",
+  "Menyalakan mesin analisis...",
+  "Mendeteksi pola candlestick...",
+  "Menganalisis arah tren...",
+  "Membaca Bollinger Bands...",
+  "Memproses sinyal MACD...",
+  "Mengevaluasi momentum...",
+  "Menyusun prediksi...",
 ];

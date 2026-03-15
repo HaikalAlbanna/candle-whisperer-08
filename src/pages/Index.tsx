@@ -27,7 +27,7 @@ const Index = () => {
       setAnalyzedAt(new Date().toLocaleTimeString());
       setStatus("complete");
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Analysis failed";
+      const message = err instanceof Error ? err.message : "Analisis gagal";
       setError(message);
       setStatus("error");
       toast.error(message);
@@ -54,7 +54,7 @@ const Index = () => {
             </h1>
           </div>
           <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
-            1M Predictor
+            Prediksi 1 Menit
           </span>
         </div>
       </header>
@@ -88,7 +88,7 @@ const Index = () => {
                 onClick={resetAnalysis}
                 className="px-4 py-2 rounded-md border border-border/60 bg-secondary/50 text-xs font-mono text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors"
               >
-                Upload new image
+                Unggah gambar baru
               </button>
             </div>
           </>
@@ -102,7 +102,7 @@ const Index = () => {
 
             {/* Summary */}
             <div className="p-4 rounded-lg bg-secondary/30 animate-fade-up" style={{ animationDelay: "400ms" }}>
-              <p className="text-xs font-mono text-muted-foreground mb-1 uppercase tracking-wider">Summary</p>
+              <p className="text-xs font-mono text-muted-foreground mb-1 uppercase tracking-wider">Ringkasan</p>
               <p className="text-sm text-foreground/90 leading-relaxed">{analysis.summary}</p>
             </div>
 
@@ -110,7 +110,7 @@ const Index = () => {
             {analyzedAt && (
               <div className="flex items-center justify-center gap-2 text-[10px] font-mono text-muted-foreground/60">
                 <Clock className="w-3 h-3" />
-                <span>Analyzed at {analyzedAt} · Timeframe: 1M</span>
+                <span>Dianalisis pada {analyzedAt} - Kerangka waktu: 1M</span>
               </div>
             )}
             <div className="flex justify-center">
@@ -119,7 +119,7 @@ const Index = () => {
                 onClick={resetAnalysis}
                 className="px-4 py-2 rounded-md border border-border/60 bg-secondary/50 text-xs font-mono text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-colors"
               >
-                Analyze another image
+                Analisis gambar lain
               </button>
             </div>
           </div>
@@ -136,7 +136,7 @@ const Index = () => {
       {/* Disclaimer */}
       <footer className="fixed bottom-0 left-0 right-0 px-4 py-2 bg-background/80 backdrop-blur border-t border-border/30">
         <p className="text-[9px] font-mono text-muted-foreground/40 text-center max-w-2xl mx-auto">
-          ⚠ For educational purposes only. Not financial advice. Past patterns do not guarantee future results.
+          Peringatan: hanya untuk tujuan edukasi. Bukan saran finansial. Pola masa lalu tidak menjamin hasil di masa depan.
         </p>
       </footer>
     </div>
